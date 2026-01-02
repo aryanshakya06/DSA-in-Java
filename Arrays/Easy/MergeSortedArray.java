@@ -1,3 +1,6 @@
+// Problem: LeetCode 88
+// Time Complexity: O(n)
+// Space Complexity: O(1)
 public class MergeSortedArray {
 
     public static void merge(int[] nums1, int[] nums2, int m, int n){
