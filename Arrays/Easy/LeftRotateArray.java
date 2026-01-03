@@ -19,6 +19,9 @@ public class LeftRotateArray {
 		
 	}
 
+// Problem: Left Rotate the array by k places
+// Time Complexity: O(n)
+// Space Complexity: O(k)
     public static void leftRotateArrayByK(int[] arr, int k){
         if ( arr == null || arr.length < 2 ) {
 			return;
@@ -41,6 +44,9 @@ public class LeftRotateArray {
 		}
     }
 
+// Problem: Left Rotate the array by k places
+// Time Complexity: O(n)
+// Space Complexity: O(1)
     public static void leftRotateArrayByKOptimal(int[] arr, int k) {
         int n = arr.length;
         k = k % n;
@@ -49,6 +55,7 @@ public class LeftRotateArray {
         reverseArray(arr, 0, n-1);
     }
 
+    // Helper Function to print an array
     public static void printArray(int[] arr) {
         for( int i = 0 ; i < arr.length ; i++) {
 			System.out.print( arr[i] + " ");
@@ -56,6 +63,7 @@ public class LeftRotateArray {
         System.out.println();
     }
 
+    // Helper function to reverse an array
     public static void reverseArray(int[] arr, int start, int end) {
         while (start <= end) {
             int temp = arr[start];
