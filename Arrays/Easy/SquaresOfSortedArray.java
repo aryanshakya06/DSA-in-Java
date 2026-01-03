@@ -1,7 +1,7 @@
 // Problem: LeetCode 977
 //Time Complexity: O(n)
 public class SquaresOfSortedArray{
-	public static int[] SquaresOfSortedArray(int[] nums){
+	public static int[] squaresOfSortedArray(int[] nums){
 			int n = nums.length;
 			int[] result = new int[n];
 			int i = 0;
@@ -34,7 +34,7 @@ public class SquaresOfSortedArray{
 
 	public static void main(String[] args){
 		int[] arr = {-4, -1, 0, 3, 10};
-		int[] result = SquaresOfSortedArray(arr);
+		int[] result = squaresOfSortedArray(arr);
 		for(int i = 0 ; i < result.length ; i++) {
 			System.out.print(result[i] + " ");
 		}
