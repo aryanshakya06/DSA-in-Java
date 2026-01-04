@@ -3,7 +3,7 @@
 // Space Complexity: O( min(n,m))
 public class IntersectionOfArrays {
 
-    public static int[] intersectionOfArrays(int[] arr1, int[] arr2) {
+    public static int[] intersectionOfSortedArrays(int[] arr1, int[] arr2) {
         int i = 0, j = 0, k = 0;
         int[] result = new int[Math.min(arr1.length, arr2.length)];
         while (i < arr1.length && j < arr2.length) {
@@ -33,7 +33,7 @@ public class IntersectionOfArrays {
     public static void main(String[] args) {
         int[] arr1 = {1, 2, 2, 3, 3, 4, 5, 6};
         int[] arr2 = {2, 3, 3, 5, 6, 6, 7};
-        int[] result = intersectionOfArrays(arr1, arr2);
+        int[] result = intersectionOfSortedArrays(arr1, arr2);
         printArray(result);
     }
 
