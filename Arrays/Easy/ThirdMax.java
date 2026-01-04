@@ -1,3 +1,6 @@
+// Problem: Return third distinct maximum number
+// Time Complexity: O(n)
+// Space Complexity: O(1)
 public class ThirdMax {
     public static int thirdMax(int[] nums) {
         Integer max1 = null;
