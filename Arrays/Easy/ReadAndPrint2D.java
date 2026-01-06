@@ -6,9 +6,14 @@ public class ReadAndPrint2D {
         Scanner sc = new Scanner(System.in);
         System.out.println("\t\t\t\tFor a n x m Matrix.");
         System.out.print("Enter the value of n: ");
-        int n = sc.nextInt();      
+        int n = sc.nextInt();     
         System.out.print("Enter the value of m: ");
         int m = sc.nextInt();
+        if (n <= 0 || m <= 0) {
+            System.out.println("Invalid Size");
+            sc.close();
+            return;
+        }
         System.out.println();
 
         int[][] matrix = new int[n][m];
