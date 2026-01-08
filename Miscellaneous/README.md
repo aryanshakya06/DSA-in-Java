@@ -3,4 +3,5 @@
 - Introduction to Java
 - Java Programming basics
 - Java Methods
+- Basic Maths
 - Java Arrays

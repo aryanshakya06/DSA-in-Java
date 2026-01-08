@@ -20,6 +20,7 @@ This repository reflects **daily disciplined practice**, clean implementations, 
 ```
 DSA-in-Java/
 │
+├── Basics/
 ├── Arrays/
 ├── Sorting/
 ├── Strings/
@@ -27,7 +28,7 @@ DSA-in-Java/
 ├── Stack_Queue/
 ├── Trees/
 ├── Graphs/
-├── Dp
+├── Dp/
 └── Miscellaneous/
 ```
 
