@@ -1,4 +1,6 @@
-// Problem: LeetCode 74 - Search in fully sorted 2D matrix
+// Problem: Search in fully sorted 2D matrix
+// LeetCode 74 (Medium)
+
 // Time Complexity: O(log(n × m))
 // Space Complexity: O(1)
 // Note: Strictly Sorted Matrix
