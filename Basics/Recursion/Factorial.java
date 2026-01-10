@@ -1,6 +1,7 @@
 // Problem: Find factorial of a number using recursion
 // Time Complexity: O(n)
 // Space Complexity: O(n) -> call stack
+import java.util.Scanner;
 public class Factorial {
 
     public static int factorial(int n) {
@@ -13,6 +14,12 @@ public class Factorial {
     }
 
     public static void main(String[] args) {
-        System.out.println(factorial(5));
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter N: ");
+        int n = sc.nextInt();
+        System.out.println(factorial(n));
+        
+        sc.close();
     }
 }
