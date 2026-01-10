@@ -1,6 +1,7 @@
 // Problem: Find sum of first N natural numbers using recursion
 // Time Complexity: O(n)
 // Space Complexity: O(n) -> call stack
+import java.util.Scanner;
 public class SumOfFirstN {
 
     // with recursion
@@ -19,6 +20,12 @@ public class SumOfFirstN {
     // }
 
     public static void main(String[] args) {
-        System.out.println(sumOfFirstN(5));
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter N: ");
+        int n = sc.nextInt();
+        System.out.println(sumOfFirstN(n));
+
+        sc.close();
     }
 }
