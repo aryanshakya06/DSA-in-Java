@@ -5,14 +5,28 @@
 public class MissingNumber {
     
     public static int missingNumber(int[] nums) {
-        int n = nums.length;
-        int sum = (n*(n+1)) / 2;
-        int arrSum = 0;
-        for (int i = 0 ; i < n ; i++) {
-            arrSum += nums[i];
+        int xor = nums.length;
+        
+        for (int i = 0 ; i < nums.length ; i++) {
+            xor ^= i;
+            xor ^= nums[i];
         }
-        return sum - arrSum;
+
+        return xor;
     }
+
+    // Sum Approach -> Optimal But Xor is best
+    // Time Complexity: O(n)
+    // Space Complexity: O(1)
+    // public static int missingNumber(int[] nums) {
+    //     int n = nums.length;
+    //     int sum = (n*(n+1)) / 2;
+    //     int arrSum = 0;
+    //     for (int i = 0 ; i < n ; i++) {
+    //         arrSum += nums[i];
+    //     }
+    //     return sum - arrSum;
+    // }
 
     // Better Approach
     // Time Complexity: O(n log n)
