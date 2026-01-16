@@ -1,5 +1,8 @@
 public class Occurence {
 
+    // Problem: Find the first occurrence of 'key' in array using recursion
+    // Time Complexity: O(n) 
+    // Space Complexity: O(n) -> call stack 
     public static int firstOccurence(int[] arr, int key, int i) {
 
         if (i == arr.length) {
@@ -13,6 +16,9 @@ public class Occurence {
         return firstOccurence(arr, key, i+1);
     }
 
+    // Problem: Find the last occurrence of 'key' in array using recursion
+    // Time Complexity: O(n) ->
+    // Space Complexity: O(n) -> call stack 
     public static int lastOccurence(int[] arr, int key, int i) {
 
         if (i == arr.length) {
