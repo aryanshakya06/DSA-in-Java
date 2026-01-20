@@ -1,4 +1,5 @@
 // Bit Manipulation
+// Covering Leetcode - 50, 191, 231, 338
 
 public class BitwiseOperators {
     
