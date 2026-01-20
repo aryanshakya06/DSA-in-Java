@@ -8,5 +8,13 @@ public class BitwiseOperators {
         System.out.println(~0);
         System.out.println(~1);
         System.out.println(~5);
+
+        // left shift 
+        // a << b = a * 2^b
+        System.out.println(5 << 2); // 20
+
+        // right shift 
+        // a >> b = a / 2^b
+        System.out.println(5 >> 2); // 1
     }
 }
