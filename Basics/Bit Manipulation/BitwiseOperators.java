@@ -2,6 +2,22 @@
 
 public class BitwiseOperators {
 
+    public static int clearLastIBits(int n, int i) {
+        int bitMask = (~0) << i;
+        return n & bitMask;
+    }
+
+    public static int updateIthBit(int n, int i, int val) {
+        n = clearIthBit(n, i);
+        int bitMask = val << i;
+        return n | bitMask;
+    }
+
+    public static int clearIthBit(int n, int i) {
+        int bitMask = ~(1 << i);
+        return n & bitMask;
+    }
+
     public static int setIthBit(int n, int i) {
         int bitMask = 1 << i;
         return n | bitMask;
@@ -45,10 +61,33 @@ public class BitwiseOperators {
         checkEvenOrOdd(5);
         checkEvenOrOdd(6);
 
-        //get ith bit
-        System.out.println(getIthBit(34, 2));
+        // get ith bit
+        System.out.println(getIthBit(34, 2)); // 0
 
         // set ith bit to 1
-        System.out.println(setIthBit(34, 2));
+        System.out.println(setIthBit(34, 2)); // 38
+
+        // clear ith bit to 0
+        System.out.println(clearIthBit(38, 2)); // 34
+
+        // update ith bit as choice
+        System.out.println(updateIthBit(34, 2, 1)); // 38
+        System.out.println(updateIthBit(38, 2, 0)); // 34 
+
+        // clear last i bits 
+        System.out.println(clearLastIBits(31, 2)); // 28
     }
+
+    // easy approach
+    // public static int updateIthBit(int n, int i, int val) {
+    //     int result = -1;
+        
+    //     if (val == 1) {
+    //         result = setIthBit(n, i);
+    //     } else {
+    //         result = clearIthBit(n, i);
+    //     }
+
+    //     return result;
+    // }
 }
