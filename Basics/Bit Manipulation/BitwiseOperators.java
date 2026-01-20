@@ -1,6 +1,18 @@
 // Bit Manipulation
 
 public class BitwiseOperators {
+    
+    public static int countSetBits(int n) {
+        int count = 0;
+        while (n > 0) {
+            if ((n & 1) == 1) { // check is LSB is 1
+                count++;
+            }
+            n = n >> 1;
+        }
+
+        return count;
+    }
 
     public static void checkIsPowerOf2(int n) {
         if ( (n & (n-1)) == 0) {
@@ -96,6 +108,10 @@ public class BitwiseOperators {
         // check if a number is in power of 2
         checkIsPowerOf2(5);
         checkIsPowerOf2(8);
+
+        // count set bits in a number
+        System.out.println(countSetBits(5));
+        System.out.println(countSetBits(8));
     }
 
     // easy approach
