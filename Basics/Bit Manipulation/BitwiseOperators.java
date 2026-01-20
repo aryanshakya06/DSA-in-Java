@@ -1,6 +1,17 @@
 // Bit Manipulation
 
 public class BitwiseOperators {
+
+    public static void checkEvenOrOdd(int n) {
+        // if LSB is 1 then number is odd else even
+        int bitMask = 1; // 00000000000000000000000000000001
+        if ((n & bitMask) == 1) {
+            System.out.println("Odd");
+        } else {
+            System.out.println("Even");
+        }
+    }
+
     public static void main(String[] args) {
         System.out.println(4 & 5);
         System.out.println(4 | 5);
@@ -16,5 +27,9 @@ public class BitwiseOperators {
         // right shift 
         // a >> b = a / 2^b
         System.out.println(5 >> 2); // 1
+
+        // using bit manipulation
+        checkEvenOrOdd(5);
+        checkEvenOrOdd(6);
     }
 }
