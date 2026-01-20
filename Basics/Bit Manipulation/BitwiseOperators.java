@@ -2,6 +2,11 @@
 
 public class BitwiseOperators {
 
+    public static int setIthBit(int n, int i) {
+        int bitMask = 1 << i;
+        return n | bitMask;
+    }
+
     public static int getIthBit(int n, int i) {
         int bitMask = 1 << i;
         if ((n & bitMask) == 1) {
@@ -42,5 +47,8 @@ public class BitwiseOperators {
 
         //get ith bit
         System.out.println(getIthBit(34, 2));
+
+        // set ith bit to 1
+        System.out.println(setIthBit(34, 2));
     }
 }
