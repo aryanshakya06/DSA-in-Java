@@ -2,6 +2,11 @@
 
 public class BitwiseOperators {
 
+    public static int clearRange(int n, int i, int j) {
+        int bitMask = ((~0) << (j+1)) | (1 << i) - 1; // 11100000 | 00000011 = 11100011
+        return n & bitMask;
+    }
+
     public static int clearLastIBits(int n, int i) {
         int bitMask = (~0) << i;
         return n & bitMask;
@@ -76,6 +81,9 @@ public class BitwiseOperators {
 
         // clear last i bits 
         System.out.println(clearLastIBits(31, 2)); // 28
+
+        // clear range of bits
+        System.out.println(clearRange(1257, 2, 7)); // 1025
     }
 
     // easy approach
