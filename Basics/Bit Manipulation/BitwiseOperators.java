@@ -2,6 +2,14 @@
 
 public class BitwiseOperators {
 
+    public static int getIthBit(int n, int i) {
+        int bitMask = 1 << i;
+        if ((n & bitMask) == 1) {
+            return 1;
+        }
+        return 0;
+    }
+
     public static void checkEvenOrOdd(int n) {
         // if LSB is 1 then number is odd else even
         int bitMask = 1; // 00000000000000000000000000000001
@@ -31,5 +39,8 @@ public class BitwiseOperators {
         // using bit manipulation
         checkEvenOrOdd(5);
         checkEvenOrOdd(6);
+
+        //get ith bit
+        System.out.println(getIthBit(34, 2));
     }
 }
