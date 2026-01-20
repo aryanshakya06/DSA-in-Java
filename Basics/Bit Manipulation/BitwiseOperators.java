@@ -2,6 +2,14 @@
 
 public class BitwiseOperators {
 
+    public static void checkIsPowerOf2(int n) {
+        if ( (n & (n-1)) == 0) {
+            System.out.println("Power of 2");
+        } else {
+            System.out.println("Not power of 2");
+        }
+    }
+
     public static int clearRange(int n, int i, int j) {
         int bitMask = ((~0) << (j+1)) | (1 << i) - 1; // 11100000 | 00000011 = 11100011
         return n & bitMask;
@@ -84,6 +92,10 @@ public class BitwiseOperators {
 
         // clear range of bits
         System.out.println(clearRange(1257, 2, 7)); // 1025
+
+        // check if a number is in power of 2
+        checkIsPowerOf2(5);
+        checkIsPowerOf2(8);
     }
 
     // easy approach
