@@ -22,10 +22,11 @@ DSA-in-Java/
 │
 ├── Basics/
 ├── Arrays/
+├── Binary Search
 ├── Sorting/
 ├── Strings/
 ├── Linkedlist/
-├── Stack_Queue/
+├── Stack Queue/
 ├── Trees/
 ├── Graphs/
 ├── Dp/
