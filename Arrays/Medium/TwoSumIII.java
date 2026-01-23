@@ -2,10 +2,6 @@
 // Approach: Modified Two Pointer using circular indices
 // Time Complexity: O(n)
 // Space Complexity: O(1)
-// Problem: Two Sum in a Sorted Rotated Array
-// Approach: Modified Two Pointer using circular indices
-// Time Complexity: O(n)
-// Space Complexity: O(1)
 import java.util.Arrays;
 public class TwoSumIII {
 
