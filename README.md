@@ -25,7 +25,7 @@ DSA-in-Java/
 ├── Binary Search
 ├── Sorting/
 ├── Strings/
-├── Linkedlist/
+├── Linked Lists/
 ├── Stack Queue/
 ├── Trees/
 ├── Graphs/
