@@ -171,6 +171,23 @@ public class LinkedList {
         System.out.println("null");
     }
 
+    // Time Complexity: O(n)
+    // Space Complexity: O(1)
+    public void reverse() {
+        Node prev = null;
+        Node curr = tail = head;
+        Node next;
+
+        while (curr != null) {
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+
+        head = prev;
+    }
+
     public static void main(String[] args) {
         LinkedList list = new LinkedList();
         list.addFirst(20);
@@ -182,10 +199,13 @@ public class LinkedList {
         // System.out.println(list.removeLast());
         list.print();
         System.out.println(list.size);
-        System.out.println(list.iterativeSearch(40));
-        System.out.println(list.iterativeSearch(100));
 
-        System.out.println(list.recursiveSearch(40));
-        System.out.println(list.recursiveSearch(100));
+        list.reverse();
+        list.print();
+        // System.out.println(list.iterativeSearch(40));
+        // System.out.println(list.iterativeSearch(100));
+
+        // System.out.println(list.recursiveSearch(40));
+        // System.out.println(list.recursiveSearch(100));
     }
 }
