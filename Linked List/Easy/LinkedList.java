@@ -14,6 +14,8 @@ public class LinkedList {
         }
     }
 
+    // Time Complexity: O(1)
+    // Space Complexity: O(1)
     public void addFirst(int data) {
         Node newNode = new Node(data);
         size++;
@@ -27,6 +29,8 @@ public class LinkedList {
         head = newNode;
     }
 
+    // Time Complexity: O(1)
+    // Space Complexity: O(1)
     public void addLast(int data) {
         Node newNode = new Node(data);
         size++;
@@ -40,13 +44,15 @@ public class LinkedList {
         tail = newNode;
     }
 
+    // Time Complexity: O(n) -> traversal up to index
+    // Space Complexity: O(1)
     public void add(int index, int data) {
 
         if (index == 0) {
             addFirst(data);
             return;
         }
-        
+
         Node newNode = new Node(data);
         size++;
         int i = 0;
@@ -63,6 +69,8 @@ public class LinkedList {
         temp.next = newNode;
     }
 
+    // Time Complexity: O(1)
+    // Space Complexity: O(1)
     public int removeFirst() {
         if (size == 0) {
             System.out.println("Empty LinkedList");
@@ -72,14 +80,17 @@ public class LinkedList {
 
         if (head == tail) {
             head = tail = null;
+        } else {
+            head = head.next;
         }
 
         size--;
-        head = head.next;
 
         return data;
     }
 
+    // Time Complexity: O(n) -> traversal to second last node
+    // Space Complexity: O(1)
     public int removeLast() {
         if (size == 0) {
             System.out.println("Empty LinkedList");
@@ -90,18 +101,67 @@ public class LinkedList {
 
         if (head == tail) {
             head = tail = null;
-        }
-        
-        size--;
-        Node previous = head;
-        while ((previous.next).next != null) {
-            previous = previous.next;
+        } else {
+            Node previous = head;
+            while ((previous.next).next != null) {
+                previous = previous.next;
+            }
+
+            previous.next = null;
+            tail = previous;
         }
 
-        previous.next = null;
+        size--;
+
         return data;
     }
 
+    // Time Complexity: O(n)
+    // Space Complexity: O(1)
+    public int iterativeSearch(int key) {
+        Node temp = head;
+        int i = -1;
+
+        while (temp != null) {
+            i++;
+            if (temp.data == key) {
+                return i;
+            }
+
+            temp = temp.next;
+        }
+
+        return -1;
+    }
+
+    // Time Complexity: O(n)
+    // Space Complexity: O(n) -> call stack
+
+    public int helper(Node head, int key) {
+        if (head == null) {
+            return -1;
+        }
+
+        if (head.data == key) {
+            return 0;
+        }
+
+        int index = helper(head.next, key);
+        if (index == -1) {
+            return -1;
+        }
+
+        return index + 1;
+    }
+
+    // Time Complexity: O(n)
+    // Space Complexity: O(n)
+    public int recursiveSearch(int key) {
+        return helper(head, key);
+    }
+
+    // Time Complexity: O(n)
+    // Space Complexity: O(1)
     public void print() {
         Node temp = head;
         while (temp != null) {
@@ -118,9 +178,14 @@ public class LinkedList {
         list.addLast(40);
         list.addLast(50);
         list.add(2, 30);
-        System.out.println(list.removeFirst());
-        System.out.println(list.removeLast());
+        // System.out.println(list.removeFirst());
+        // System.out.println(list.removeLast());
         list.print();
         System.out.println(list.size);
+        System.out.println(list.iterativeSearch(40));
+        System.out.println(list.iterativeSearch(100));
+
+        System.out.println(list.recursiveSearch(40));
+        System.out.println(list.recursiveSearch(100));
     }
 }
