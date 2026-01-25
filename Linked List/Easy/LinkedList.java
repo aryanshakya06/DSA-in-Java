@@ -233,16 +233,75 @@ public class LinkedList {
         prev.next = prev.next.next;
     }
 
+    // slow-fast approach
+    public Node findMid(Node head) {
+        if (head == null) {
+            return head;
+        }
+
+        Node slow = head;
+        Node fast = head;
+
+        while (fast != null && fast.next != null ) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+
+        return slow;
+    }
+
+    public boolean isPalindrome() {
+        if (head == null || head.next == null) {
+            return true;
+        }
+
+        Node mid = findMid(head);
+
+        Node prev = null;
+        Node curr = mid;
+        Node next;
+
+        while (curr != null) {
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+
+        Node rightHead = prev;
+        Node leftHead = head;
+
+        while (rightHead != null) {
+            if (leftHead.data != rightHead.data) {
+                return false;
+            }
+            
+            leftHead = leftHead.next;
+            rightHead = rightHead.next;
+        }
+
+        return true;
+    }
+
     public static void main(String[] args) {
         LinkedList list = new LinkedList();
-        list.addFirst(20);
-        list.addFirst(10);
-        list.addLast(40);
-        list.addLast(50);
-        list.add(2, 30);
+
+        list.addLast(1);
+        list.addLast(2);
+        list.addLast(2);
+        list.addLast(1);
         list.print();
-        list.RemoveNthFromEnd(3);
-        list.print();
+        System.out.println(list.isPalindrome());
+
+        // LinkedList list = new LinkedList();
+        // list.addFirst(20);
+        // list.addFirst(10);
+        // list.addLast(40);
+        // list.addLast(50);
+        // list.add(2, 30);
+        // list.print();
+        // list.RemoveNthFromEnd(3);
+        // list.print();
 
         // System.out.println(list.removeFirst());
         // System.out.println(list.removeLast());
