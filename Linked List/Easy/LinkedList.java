@@ -188,6 +188,51 @@ public class LinkedList {
         head = prev;
     }
 
+    // Time Complexity: O(n)
+    // Space Complexity: O(1)
+    public void RemoveNthFromEnd(int n) {
+        if (head == null) {
+            System.out.println("Empty LinkedList");
+            return;
+        }
+
+        int s = 0;
+        Node temp = head;
+
+        while (temp != null) {
+            temp = temp.next;
+            s++;
+        }
+
+        if (n <= 0 || n > s) {
+            System.out.println("Invalid index");
+            return;
+        }
+
+        if (n == s) {
+            head = head.next;
+            if (head == null) {
+                tail = null;
+            }
+            return;
+        }
+
+        int i = 1;
+        Node prev = head;
+
+        while (i < s - n) {
+            prev = prev.next;
+            i++;
+        }
+
+        // if tail
+        if (prev.next == tail) {
+            tail = prev;
+        }
+
+        prev.next = prev.next.next;
+    }
+
     public static void main(String[] args) {
         LinkedList list = new LinkedList();
         list.addFirst(20);
@@ -195,16 +240,16 @@ public class LinkedList {
         list.addLast(40);
         list.addLast(50);
         list.add(2, 30);
+        list.print();
+        list.RemoveNthFromEnd(3);
+        list.print();
+
         // System.out.println(list.removeFirst());
         // System.out.println(list.removeLast());
-        list.print();
-        System.out.println(list.size);
-
-        list.reverse();
-        list.print();
+        // list.reverse();
+        // list.print();
         // System.out.println(list.iterativeSearch(40));
         // System.out.println(list.iterativeSearch(100));
-
         // System.out.println(list.recursiveSearch(40));
         // System.out.println(list.recursiveSearch(100));
     }
