@@ -1,14 +1,14 @@
 public class Main {
-    
-    public static class Node {
-            int data;
-            Node next;
 
-            public Node(int data) {
-                this.data = data;
-                this.next = null;
-            }
+    public static class Node {
+        int data;
+        Node next;
+
+        public Node(int data) {
+            this.data = data;
+            this.next = null;
         }
+    }
 
     public static class LinkedList {
 
@@ -316,16 +316,48 @@ public class Main {
             return false;
         }
 
+        public void removeCycle() {
+            if (!this.isCycle()) {
+                return;
+
+            } else {
+                Node slow = head;
+                Node fast = head;
+
+                while (fast != null && fast.next != null) {
+                    slow = slow.next;
+                    fast = fast.next.next;
+                    if (fast == slow) {
+                        break;
+                    }
+                }
+
+                Node prev = null;
+                slow = head;
+
+                while (fast != slow) {
+                    prev = fast;
+                    slow = slow.next;
+                    fast = fast.next;
+                }
+
+                prev.next = null;
+            }
+        }
     }
 
     public static void main(String[] args) {
         LinkedList list = new LinkedList();
 
         list.head = new Node(1);
-        list.head.next = new Node(2);
+        Node temp = new Node(2);
+        list.head.next = temp;
         list.head.next.next = new Node(3);
-        list.head.next.next.next = list.head; // making a cycle
+        list.head.next.next.next = temp; // making a cycle
         System.out.println(list.isCycle());
+        list.removeCycle();
+        System.out.println(list.isCycle());
+        list.print();
 
         // list.addLast(1);
         // list.addLast(2);
