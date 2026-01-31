@@ -344,20 +344,69 @@ public class Main {
                 prev.next = null;
             }
         }
+
+        public void zigZag() {
+            
+            Node slow = this.head;
+            Node fast = this.head.next;
+            while (fast != null && fast.next != null) {
+                slow = slow.next;
+                fast = fast.next.next;
+            }
+
+            Node mid = slow;
+
+            Node curr = mid.next;
+            mid.next = null;
+            Node prev = null;
+            Node next;
+
+            while (curr != null) {
+                next = curr.next;
+                curr.next = prev;
+                prev = curr;
+                curr = next;
+            }
+
+            Node left = head;
+            Node right = prev;
+            Node nextL;
+            Node nextR;
+
+            while (left != null && right != null) {
+                nextL = left.next;
+                left.next = right;
+                nextR = right.next;
+                right.next = nextL;
+
+                left = nextL;
+                right = nextR;
+            }
+        }
     }
 
     public static void main(String[] args) {
         LinkedList list = new LinkedList();
-
-        list.head = new Node(1);
-        Node temp = new Node(2);
-        list.head.next = temp;
-        list.head.next.next = new Node(3);
-        list.head.next.next.next = temp; // making a cycle
-        System.out.println(list.isCycle());
-        list.removeCycle();
-        System.out.println(list.isCycle());
+        
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
+        list.add(5);
+        list.add(6);
         list.print();
+        list.zigZag();
+        list.print();
+
+        // list.head = new Node(1);
+        // Node temp = new Node(2);
+        // list.head.next = temp;
+        // list.head.next.next = new Node(3);
+        // list.head.next.next.next = temp; // making a cycle
+        // System.out.println(list.isCycle());
+        // list.removeCycle();
+        // System.out.println(list.isCycle());
+        // list.print();
 
         // list.addLast(1);
         // list.addLast(2);
