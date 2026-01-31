@@ -1,8 +1,6 @@
 public class Main {
-
-    public static class LinkedList {
-
-        public class Node {
+    
+    public static class Node {
             int data;
             Node next;
 
@@ -11,6 +9,8 @@ public class Main {
                 this.next = null;
             }
         }
+
+    public static class LinkedList {
 
         public Node head;
         public Node tail;
@@ -301,17 +301,38 @@ public class Main {
             return true;
         }
 
+        public boolean isCycle() {
+            Node slow = head;
+            Node fast = head;
+
+            while (fast != null && fast.next != null) {
+                slow = slow.next;
+                fast = fast.next.next;
+
+                if (slow == fast) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
     }
 
     public static void main(String[] args) {
         LinkedList list = new LinkedList();
 
-        list.addLast(1);
-        list.addLast(2);
-        list.addLast(2);
-        list.addLast(1);
-        list.print();
-        System.out.println(list.isPalindrome());
+        list.head = new Node(1);
+        list.head.next = new Node(2);
+        list.head.next.next = new Node(3);
+        list.head.next.next.next = list.head; // making a cycle
+        System.out.println(list.isCycle());
+
+        // list.addLast(1);
+        // list.addLast(2);
+        // list.addLast(2);
+        // list.addLast(1);
+        // list.print();
+        // System.out.println(list.isPalindrome());
 
         // LinkedList list = new LinkedList();
         // list.addFirst(20);
