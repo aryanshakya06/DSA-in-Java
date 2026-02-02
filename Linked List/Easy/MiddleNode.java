@@ -19,6 +19,8 @@ public class MiddleNode {
     }
 
     // Optimal Approach 
+    // Time Complexity: O(n/2)
+    // Space Complexity: O(1)
     public ListNode middleNode(ListNode head) {
         ListNode slow = head;
         ListNode fast = head;
@@ -32,6 +34,8 @@ public class MiddleNode {
     }
 
     // Brute Force
+    // Time Complexity: O(n)
+    // Space Complexity: O(1)
     // public ListNode middleNode(ListNode head) {
     // ListNode temp = head;
     // int count = 0;
