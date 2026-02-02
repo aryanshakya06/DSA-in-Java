@@ -18,6 +18,7 @@ public class MiddleNode {
         }
     }
 
+    // Optimal Approach 
     public ListNode middleNode(ListNode head) {
         ListNode slow = head;
         ListNode fast = head;
@@ -30,6 +31,7 @@ public class MiddleNode {
         return slow;
     }
 
+    // Brute Force
     // public ListNode middleNode(ListNode head) {
     // ListNode temp = head;
     // int count = 0;
