@@ -1,3 +1,7 @@
+// Problem: Rearrange a linked list from: L0 → Ln → L1 → Ln-1 → L2 → Ln-2 → …
+// LeetCode 143
+// Time Complexity: O(n)
+// Space Complexity: O(1)
 public class ReorderList {
 
     public static class ListNode {
