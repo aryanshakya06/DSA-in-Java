@@ -1,4 +1,7 @@
+// Problem: Reverse a singly linked list so that the nodes appear in the opposite order, and return the new head
+// LeetCode 206
 public class ReverseList {
+
     public class ListNode {
         int val;
         ListNode next;
@@ -17,6 +20,8 @@ public class ReverseList {
         }
 
         // Recursion
+        // Time Complexity: O(n)
+        // Space Complexity: O(n)
         public ListNode reverseList(ListNode head) {
             if (head == null || head.next == null) {
                 return head;
@@ -31,6 +36,8 @@ public class ReverseList {
         }
 
         // Iteration
+        // Time Complexity: O(n)
+        // Space Complexity: O(1)
         // public ListNode reverseList(ListNode head) {
         //     ListNode curr = head;
         //     ListNode prev = null;
