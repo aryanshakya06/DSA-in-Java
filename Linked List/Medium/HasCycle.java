@@ -1,5 +1,7 @@
 // Problem: Determine the linked list has cycle or not.
 // LeetCode 141
+// Time Complexity: O(n)
+// Space Complexity: O(1)
 public class HasCycle {
 
     public class ListNode {
