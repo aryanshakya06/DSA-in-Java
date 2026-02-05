@@ -1,50 +1,52 @@
-// Problem: Find and return the node where a linked list’s cycle begins & if no cycle exists, return null
-// LeetCode 142
-public class DetectCycle {
+    // Problem: Find and return the node where a linked list’s cycle begins & if no cycle exists, return null
+    // LeetCode 142
+    // Time Complexity: O(n)
+    // Space Complexity: O(1)
+    public class DetectCycle {
 
-    public class ListNode {
-        int val;
-        ListNode next;
+        public class ListNode {
+            int val;
+            ListNode next;
 
-        ListNode() {
-        }
+            ListNode() {
+            }
 
-        ListNode(int val) {
-            this.val = val;
-        }
+            ListNode(int val) {
+                this.val = val;
+            }
 
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
+            ListNode(int val, ListNode next) {
+                this.val = val;
+                this.next = next;
 
-        }
-    }
-
-    public ListNode detectCycle(ListNode head) {
-        ListNode slow = head;
-        ListNode fast = head;
-        boolean cycle = false;
-        
-        while (fast != null && fast.next != null) {
-            slow = slow.next;
-            fast = fast.next.next;
-
-            if (slow == fast) {
-                cycle = true;
-                break;
             }
         }
 
-        if (!cycle) {
-            return null;
-        }
+        public ListNode detectCycle(ListNode head) {
+            ListNode slow = head;
+            ListNode fast = head;
+            boolean cycle = false;
+            
+            while (fast != null && fast.next != null) {
+                slow = slow.next;
+                fast = fast.next.next;
 
-        slow = head;
+                if (slow == fast) {
+                    cycle = true;
+                    break;
+                }
+            }
 
-        while (slow != fast) {
-            slow = slow.next;
-            fast = fast.next;
+            if (!cycle) {
+                return null;
+            }
+
+            slow = head;
+
+            while (slow != fast) {
+                slow = slow.next;
+                fast = fast.next;
+            }
+            return slow;
         }
-        return slow;
     }
-}
