@@ -1,3 +1,7 @@
+// Problem: Verifying an Alien Dictionary
+// LeetCode 953
+// Time Complexity: O(n * m)  
+// Space Complexity: O(1)     
 public class AlienDict {
     public boolean isAlienSorted(String[] words, String order) {
 
