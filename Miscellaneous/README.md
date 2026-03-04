@@ -9,4 +9,5 @@
 - Java ArrayList 
 - Java LinkedList
 - Java Stack
+- Java Queue
 - Java Collections Framework
