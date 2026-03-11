@@ -91,6 +91,10 @@ public class StackUsingLL {
                 return data;
             }
         }
+
+        public boolean isEmpty() {
+            return list.size == 0;
+        }
     }
 
     public static void main(String[] args) {
