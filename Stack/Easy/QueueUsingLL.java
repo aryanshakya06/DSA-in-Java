@@ -15,9 +15,15 @@ public class QueueUsingLL {
 
     static class LinkedList {
 
-        Node head = null;
-        Node tail = null;
+        Node head;
+        Node tail;
         int size;
+
+        LinkedList() {
+            this.head = null;
+            this.tail = null;
+            this.size = 0;
+        }
 
         public void addLast(int data) {
             Node newNode = new Node(data);
