@@ -2,7 +2,7 @@
 // LeetCode 901 
 // Time Complexity: O(1) 
 // Space Complexity: O(n)
-import java.util.*;
+import java.util.Stack;
 
 class StockSpanner {
 
