@@ -37,6 +37,6 @@ public class Expressions {
 
     public static void main(String[] args) {
         String exp = "23*54*+9-";
-        System.out.println("Result: " + evaluatePostfix(exp));
+        System.out.println(exp + " = " + evaluatePostfix(exp));
     }
 }
