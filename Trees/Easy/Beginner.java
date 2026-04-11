@@ -47,6 +47,48 @@ public class Beginner {
 
         return sum;
     }
+    
+    // Approach 1 - O(n^2)
+    // public static int diameter(Node root) {
+    //   if (root == null) {
+    //     return 0;
+    //   }
+      
+    //   int leftDiameter = diameter(root.left);
+    //   int rightDiameter = diameter(root.right);
+      
+    //   int leftHeight = height(root.left);
+    //   int rightHeight = height(root.right);
+      
+    //   int selfDiameter = leftHeight + rightHeight + 1;
+      
+    //   return Math.max( Math.max(leftDiameter, rightDiameter), selfDiameter);
+    // }
+    
+    // Approach 2 - O(n)
+    static class Info {
+      int diameter;
+      int height;
+      
+      Info (int diameter, int height) {
+        this.diameter = diameter;
+        this.height = height;
+      }
+    }
+    
+    public static Info diameter(Node root) {
+      if (root == null) {
+        return new Info(0 , 0);
+      }
+      
+      Info leftInfo = diameter(root.left);
+      Info rightInfo = diameter(root.right);
+      
+      int diameter = Math.max( Math.max(leftInfo.diameter, rightInfo.diameter), rightInfo.height + leftInfo.height + 1);
+      int height = Math.max(leftInfo.height, rightInfo.height) + 1;
+      
+      return new Info(diameter, height);
+    }
 
     public static void main(String[] args) {
 
@@ -61,5 +103,6 @@ public class Beginner {
         System.out.println(height(root));
         System.out.println(countNodes(root));
         System.out.println(sumNodes(root));
+        System.out.println(diameter(root).diameter);
     }
 }
