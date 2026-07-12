@@ -20,17 +20,17 @@ This repository reflects **daily disciplined practice**, clean implementations, 
 ```
 DSA-in-Java/
 │
-├── Basics/
-├── Arrays/
-├── Binary Search
-├── Sorting/
-├── Strings/
-├── Linked Lists/
-├── Stack Queue/
-├── Trees/
-├── Graphs/
-├── Dp/
-└── Miscellaneous/
+├── 01-Basics/
+├── 02-Arrays/
+├── 03-Binary Search
+├── 04-Sorting/
+├── 05-Strings/
+├── 06-Linked Lists/
+├── 07-Stack Queue/
+├── 08-Trees/
+├── 09-Graphs/
+├── 10-DP/
+└── 11-Miscellaneous/
 ```
 
 Each folder contains **topic-wise Java implementations** with readable logic and standard naming conventions.
