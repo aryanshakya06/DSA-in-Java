@@ -1,6 +1,6 @@
-# Arrays
+# Stack and Queue
 
-Java solutions to common array problems, focusing on traversal, optimization, and edge-case handling.
+Java solutions to stack and queue problems, including monotonic stacks and implementation-based questions.
 
 Problems are organized by difficulty:
 - Easy

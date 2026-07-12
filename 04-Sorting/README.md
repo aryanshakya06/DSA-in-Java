@@ -1,38 +1,20 @@
-# Sorting Algorithms (Java)
+# Sorting
 
-This directory contains implementations of commonly used **sorting algorithms** written in **Java**, as part of my **DSA preparation journey**.
+Classic sorting algorithms implemented from scratch in Java.
 
-The goal is to understand:
-- How each sorting algorithm works
-- Their time and space complexities
-- When to use which sorting technique
-
----
-
-## 📂 Contents
-
+Implementations:
 - Bubble Sort
 - Selection Sort
 - Insertion Sort
+- Merge Sort
+- Quick Sort
+- Count Sort
 
-Each algorithm is implemented from scratch with clear logic for learning purposes.
-
----
-
-## ⏱️ Time & Space Complexity
-
-| Algorithm        | Best Case | Average Case | Worst Case | Space |
-|------------------|-----------|--------------|------------|-------|
-| Bubble Sort      | O(n)      | O(n²)        | O(n²)      | O(1)  |
-| Selection Sort   | O(n²)     | O(n²)        | O(n²)      | O(1)  |
-| Insertion Sort   | O(n)      | O(n²)        | O(n²)      | O(1)  |
-| Merge Sort       | O(n log n)| O(n log n)   | O(n log n) | O(n)  |
-| Quick Sort       | O(n log n)| O(n log n)   | O(n²)      | O(log n) |
-
----
-
-## 🎯 Learning Focus
-
-- Compare **stable vs unstable** sorting
-- Understand **in-place vs extra space** algorithms
-- Identify best sorting algorithm for different scenarios
+| Algorithm      | Best       | Average    | Worst      | Space    |
+|----------------|------------|------------|------------|----------|
+| Bubble Sort    | O(n)       | O(n^2)     | O(n^2)     | O(1)     |
+| Selection Sort | O(n^2)     | O(n^2)     | O(n^2)     | O(1)     |
+| Insertion Sort | O(n)       | O(n^2)     | O(n^2)     | O(1)     |
+| Merge Sort     | O(n log n) | O(n log n) | O(n log n) | O(n)     |
+| Quick Sort     | O(n log n) | O(n log n) | O(n^2)     | O(log n) |
+| Count Sort     | O(n + k)   | O(n + k)   | O(n + k)   | O(k)     |

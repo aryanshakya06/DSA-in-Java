@@ -1,6 +1,6 @@
-# Arrays
+# Strings
 
-Java solutions to common array problems, focusing on traversal, optimization, and edge-case handling.
+Java solutions to string problems, covering manipulation, matching, and frequency-based techniques.
 
 Problems are organized by difficulty:
 - Easy

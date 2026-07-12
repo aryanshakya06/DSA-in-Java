@@ -1,13 +1,8 @@
-# Topics Covered
+# Miscellaneous
 
-- Introduction to Java
-- Java Programming basics
-- Java Methods
-- Basic Maths
-- Java Arrays
-- Recursion Basics
-- Java ArrayList 
-- Java LinkedList
-- Java Stack
-- Java Queue
-- Java Collections Framework
+Techniques and patterns that cut across multiple topics.
+
+Currently covered:
+- Sliding Window
+
+More patterns will be added here as they come up.
